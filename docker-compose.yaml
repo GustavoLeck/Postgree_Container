@@ -13,6 +13,7 @@ services:
   postgree-db:
     image: postgres:latest
     container_name: postgres-db
+    restart: always
     networks:
       - postgreNet
     environment:
