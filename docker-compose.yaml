@@ -13,9 +13,13 @@ services:
   postgree-db:
     image: postgres:latest
     container_name: postgres-db
+    hostname: postgres
     restart: always
     networks:
-      - postgreNet
+      postgreNet:
+        aliases:
+          - postgres
+          - postgres.local
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: password
